@@ -4,7 +4,7 @@
 #
 Name     : flrig
 Version  : 1.3.54
-Release  : 10
+Release  : 11
 URL      : https://sourceforge.net/projects/fldigi/files/flrig/flrig-1.3.54.tar.gz
 Source0  : https://sourceforge.net/projects/fldigi/files/flrig/flrig-1.3.54.tar.gz
 Summary  : No detailed summary available
@@ -13,6 +13,7 @@ License  : GPL-2.0
 Requires: flrig-bin = %{version}-%{release}
 Requires: flrig-data = %{version}-%{release}
 Requires: flrig-license = %{version}-%{release}
+BuildRequires : compat-gcc-10-dev
 BuildRequires : fltk-dev
 BuildRequires : fontconfig-dev
 BuildRequires : libXcursor-dev
@@ -58,11 +59,15 @@ license components for the flrig package.
 cd %{_builddir}/flrig-1.3.54
 
 %build
+## build_prepend content
+export CC=gcc-10
+export CXX=g++-10
+## build_prepend end
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1612367580
+export SOURCE_DATE_EPOCH=1622050086
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -82,7 +87,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1612367580
+export SOURCE_DATE_EPOCH=1622050086
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/flrig
 cp %{_builddir}/flrig-1.3.54/COPYING %{buildroot}/usr/share/package-licenses/flrig/b47456e2c1f38c40346ff00db976a2badf36b5e3
