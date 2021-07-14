@@ -1,7 +1,8 @@
-1.4.0
+1.4.1
 fltk-dev
 fontconfig-dev
 libXcursor-dev
 libXft-dev
 libjpeg-turbo-dev
 pkgconfig(x11)
+systemd-dev
