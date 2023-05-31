@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : flrig
-Version  : 2.0.0
-Release  : 23
-URL      : https://sourceforge.net/projects/fldigi/files/flrig/flrig-2.0.0.tar.gz
-Source0  : https://sourceforge.net/projects/fldigi/files/flrig/flrig-2.0.0.tar.gz
+Version  : 2.0.01
+Release  : 24
+URL      : https://sourceforge.net/projects/fldigi/files/flrig/flrig-2.0.01.tar.gz
+Source0  : https://sourceforge.net/projects/fldigi/files/flrig/flrig-2.0.01.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -60,10 +60,10 @@ license components for the flrig package.
 
 
 %prep
-%setup -q -n flrig-2.0.0
-cd %{_builddir}/flrig-2.0.0
+%setup -q -n flrig-2.0.01
+cd %{_builddir}/flrig-2.0.01
 pushd ..
-cp -a flrig-2.0.0 buildavx2
+cp -a flrig-2.0.01 buildavx2
 popd
 
 %build
@@ -71,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685503365
+export SOURCE_DATE_EPOCH=1685561152
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -103,7 +103,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1685503365
+export SOURCE_DATE_EPOCH=1685561152
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/flrig
 cp %{_builddir}/flrig-%{version}/COPYING %{buildroot}/usr/share/package-licenses/flrig/b47456e2c1f38c40346ff00db976a2badf36b5e3 || :
