@@ -6,10 +6,10 @@
 # autospec commit: c1050fe
 #
 Name     : flrig
-Version  : 2.0.04
-Release  : 28
-URL      : https://sourceforge.net/projects/fldigi/files/flrig/flrig-2.0.04.tar.gz
-Source0  : https://sourceforge.net/projects/fldigi/files/flrig/flrig-2.0.04.tar.gz
+Version  : 2.0.05
+Release  : 29
+URL      : https://sourceforge.net/projects/fldigi/files/flrig/flrig-2.0.05.tar.gz
+Source0  : https://sourceforge.net/projects/fldigi/files/flrig/flrig-2.0.05.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -62,10 +62,10 @@ license components for the flrig package.
 
 
 %prep
-%setup -q -n flrig-2.0.04
-cd %{_builddir}/flrig-2.0.04
+%setup -q -n flrig-2.0.05
+cd %{_builddir}/flrig-2.0.05
 pushd ..
-cp -a flrig-2.0.04 buildavx2
+cp -a flrig-2.0.05 buildavx2
 popd
 
 %build
@@ -73,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1701956660
+export SOURCE_DATE_EPOCH=1704137250
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -125,7 +125,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1701956660
+export SOURCE_DATE_EPOCH=1704137250
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/flrig
 cp %{_builddir}/flrig-%{version}/COPYING %{buildroot}/usr/share/package-licenses/flrig/b47456e2c1f38c40346ff00db976a2badf36b5e3 || :
